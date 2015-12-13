@@ -2,7 +2,7 @@
     <div class="col-md-3 text-center">
         <%= image_tag @user.profile.avatar.url %><br/>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6">
         <div class="well">
             <h1><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
             <h3><span class="job_title_icon"><%= job_title_icon %></span> <%= @user.profile.job_title %></h3>
@@ -11,7 +11,8 @@
                 <span class="phone_number_icon"><%= email_icon %></span> <span class="bold"><%= @user.profile.contact_email %></span><br/>
             <% end %>
         </div>
-        <div class="well">
+        <div class="well profile-description">
+            <h3>Description</h3>
             <%= @user.profile.description %><br/>
         </div>
     </div>
