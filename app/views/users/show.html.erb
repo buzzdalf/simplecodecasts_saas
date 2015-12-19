@@ -4,7 +4,12 @@
     </div>
     <div class="col-md-6">
         <div class="well">
-            <h1><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
+            <h1>
+                <%= @user.profile.first_name %> <%= @user.profile.last_name %>
+                <% if @user.plan_id == 2 %>
+                    <span class="label label-danger col-md-offset-4">PRO</span>
+                <% end %>
+            </h1>
             <h3><span class="job_title_icon"><%= job_title_icon %></span> <%= @user.profile.job_title %></h3>
             <% if current_user.plan_id == 2 %>
                 <span class="phone_number_icon"><%= phone_number_icon %></span> <span class="bold"><%= @user.profile.phone_number %></span><br/>
